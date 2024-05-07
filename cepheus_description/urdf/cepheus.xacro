@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<robot name="cepheus" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find cepheus_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find cepheus_description)/urdf/cepheus.trans" />
+<xacro:include filename="$(find cepheus_description)/urdf/cepheus.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.004343753119527569 -0.0003103983167164152 0.08367724784122764" rpy="0 0 0"/>
+    <mass value="35.1759125015892"/>
+    <inertia ixx="1.0427" iyy="1.667144" izz="2.59404" ixy="-0.002583" iyz="0.001053" ixz="0.002752"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://cepheus_description/meshes/cepheus.dae" scale="1 1 1"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://cepheus_description/meshes/cepheus.dae" scale="1 1 1"/>
+    </geometry>
+  </collision>
+</link>
+<link name="lidar">
+</link>
+<joint name="lidar_joint" type="fixed">
+  <origin xyz="0.174331 0 0.1559" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar"/>
+</joint>
+<link name="imu_link">
+</link>
+<joint name="imu__joint" type="fixed">
+  <origin xyz="-0.11 0 0.115" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="imu_link"/>
+</joint>
+</robot>

@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+
+<launch>
+
+	<!-- roslaunch cepheus_slam map_saver.launch map_name:=yourmapname -->
+
+	<arg name="map_name" default="checkpoint"/>
+
+	<node pkg="map_server" type="map_saver" name="map_saver" args="-f $(find cepheus_navigation)/maps/$(arg map_name)"/>
+
+</launch>
