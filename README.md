@@ -1,7 +1,37 @@
 
 # Cepheus ROS1 Noetic Release
 
+
 ![Cepheus Logo](img/logo.png)
+
+<div align="center">
+
+Welcome to the official public repository for **Cepheus** by **RigBetel Labs**.
+
+**Purpose:**  
+This repository hosts essential documentation and code for *Cepheus Robot*, facilitating transparency and collaboration.
+
+**Privacy:**  
+Certain sensitive packages and scripts have been excluded to maintain privacy standards.
+
+**Contents:**  
+- **Documentation:** Detailed guides and technical specifications.
+- **Codebase:** Essential source code for *Cepheus Robot*.
+- **Resources:** Supplementary materials and dependencies.
+
+
+**Contact:**  
+For inquiries and collaboration opportunities, reach out to RigBetel Labs.
+
+
+<a href="https://rigbetellabs.com/">![Website](https://img.shields.io/website?down_color=lightgrey&down_message=offline&label=Rigbetellabs%20Website&style=for-the-badge&up_color=green&up_message=online&url=https%3A%2F%2Frigbetellabs.com%2F)</a>
+<a href="https://www.youtube.com/channel/UCfIX89y8OvDIbEFZAAciHEA">![Youtube Subscribers](https://img.shields.io/youtube/channel/subscribers/UCfIX89y8OvDIbEFZAAciHEA?label=YT%20Subscribers&style=for-the-badge)</a>
+<a href="https://www.instagram.com/rigbetellabs/">![Instagram](https://img.shields.io/badge/Follow_on-Instagram-pink?style=for-the-badge&logo=appveyor?label=Instagram)</a>
+
+
+</div>
+
+--- 
 
 ## Table of Contents
 - [**1. Installation**](#1-installation)
@@ -224,11 +254,13 @@ Simultaneous Localization and Mapping (SLAM) for the robot.
 > [!NOTE]
 > By default, the robot is programmed to be started up automatically upon bootup, with its ros running locally without the need for any wifi network. To get into the development mode of the robot, ssh into the robot and run
 ```bash
-dev_mode
+cd ros1_ws/src/cepheus
+./development.sh
 ```
 This will stop all your local ros servers permanently and allow you to test your launch files according to will. If you need the robot to be upstart upon bootup again, you can always enable it using
 ```bash
-demo_mode
+cd ros1_ws/src/cepheus
+./demo.sh
 ```
 
 
@@ -239,11 +271,15 @@ roslaunch cepheus_gazebo cepheus_warehouse.launch
 ```
 The gazebo world looks like this:
 ![warehouse](img/warehouse.png)
+
 ### Real Robot
 
 ```bash
 roslaunch cepheus_firmware bringup.launch joy:=true # Set true to get joystick control
 ```
+
+### Odometry packages
+
 - For cartographer-based odometry:
 ```bash
 roslaunch cepheus_odometry carto_odometry.launch 
