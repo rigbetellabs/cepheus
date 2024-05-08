@@ -9,11 +9,6 @@ find_package(catkin REQUIRED COMPONENTS
   std_srvs
 )
 
-add_service_files(
-  FILES
-  Checkpoint.srv
-)
-
 generate_messages(
   DEPENDENCIES
 )
