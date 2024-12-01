@@ -3,13 +3,17 @@
 
 <xacro:property name="body_color" value="Gazebo/DarkGray" />
 
+<gazebo>
+  <plugin name="control" filename="libgazebo_ros_control.so"/>
+</gazebo>
+
 
 <gazebo>
   <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
     <commandTopic>/cmd_vel</commandTopic>
     <odometryTopic>odom</odometryTopic>
     <odometryFrame>odom</odometryFrame>
-    <odometryRate>10.0</odometryRate>
+    <odometryRate>0.0</odometryRate>
     <robotBaseFrame>base_link</robotBaseFrame>
   </plugin>
 </gazebo>
@@ -25,10 +29,7 @@
 						<samples>720</samples>
 						<resolution>1</resolution>
 						<min_angle>-3.142</min_angle>
-						<max_angle>3.142</max_angopic>odom</odometryTopic>
-    <odometryFrame>odom</odometryFrame>
-    <odometryRate>0.0</odometryRate>
-    <robotBaseFrame>base_link</robotBle>
+						<max_angle>3.142</max_angle>
 					</horizontal>
 				</scan>
 				<range>
