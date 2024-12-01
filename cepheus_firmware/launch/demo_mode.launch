@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-
-<launch>
-	<include file="$(find cepheus_firmware)/launch/bringup.launch"/>
-	<include file="$(find cepheus_odometry)/launch/carto_odometry.launch"/>
-	<include file="$(find cepheus_navigation)/launch/cepheus_carto_navigation.launch"/>
-</launch>
