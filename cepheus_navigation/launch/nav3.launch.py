@@ -16,7 +16,7 @@ def generate_launch_description():
     # nav2_yaml = os.path.join(get_package_share_directory('acrux_navigation'), 'config', 'nav2_params_simulation.yaml')
     nav2_yaml = os.path.join(get_package_share_directory('cepheus_navigation'), 'config', 'nav2_params.yaml')
     # nav2_yaml = '/home/rigbetel_labs/ros2_ws/src/Navigation-experiments-/nav2_params_simulation.yaml'
-    map_file = os.path.join(get_package_share_directory('cepheus_navigation'), 'maps', 'room2.yaml')
+    map_file = os.path.join(get_package_share_directory('cepheus_navigation'), 'maps', 'test2.yaml')
     # map_file = '/home/rigbetel_labs/vitesco_voyage_map2.yaml'
     # params_file = '/home/rigbetel_labs/ros2_ws/src/acrux_private/acrux_navigation/config/nav2_params_simulation.yaml'
   

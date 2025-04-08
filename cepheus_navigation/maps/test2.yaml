@@ -1,4 +1,4 @@
-image: test1.pgm
+image: test2.pgm
 mode: trinary
 resolution: 0.05
 origin: [-6.17, -6.16, 0]

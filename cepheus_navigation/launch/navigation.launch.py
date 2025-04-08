@@ -9,11 +9,11 @@ from launch.substitutions import LaunchConfiguration
 
 def generate_launch_description():
   nav2_launch_dir = os.path.join(get_package_share_directory('nav2_bringup'), 'launch')
-  prefix_address = get_package_share_directory('tortoisebotpro_navigation') 
+  prefix_address = get_package_share_directory('cepheus_navigation') 
   params_file= os.path.join(prefix_address, 'config', 'nav2_params.yaml')
 
-  cartographer_launch_dir = os.path.join(get_package_share_directory('tortoisebotpro_max_slam'), 'launch')
-  params_file_robot = os.path.join(get_package_share_directory('tortoisebotpro_max_slam'), 'config', 'slam.lua')
+  cartographer_launch_dir = os.path.join(get_package_share_directory('cepheus_slam'), 'launch')
+  params_file_robot = os.path.join(get_package_share_directory('cepheus_slam'), 'config', 'slam.lua')
 
   exploration = LaunchConfiguration('exploration', default='True')
 
@@ -21,7 +21,7 @@ def generate_launch_description():
   map_dir = LaunchConfiguration(
       'map',
       default=os.path.join(
-          get_package_share_directory('tortoisebotpro_max_navigation'),
+          get_package_share_directory('cepheus_navigation'),
           'maps',
           'room2.yaml'))
 
@@ -29,7 +29,7 @@ def generate_launch_description():
   param_dir = LaunchConfiguration(
       'params_file',
       default=os.path.join(
-          get_package_share_directory('tortoisebotpro_max_navigation'),
+          get_package_share_directory('cepheus_navigation'),
           'config',
           param_file_name))
   
