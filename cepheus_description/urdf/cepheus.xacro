@@ -1,0 +1,326 @@
+<?xml version="1.0" ?>
+<robot name="cepheus" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!-- <xacro:include filename="$(find cepheus_description)/urdf/materials.xacro" /> -->
+<xacro:include filename="$(find cepheus_description)/urdf/cepheus.trans" />
+<xacro:include filename="$(find cepheus_description)/urdf/cepheus.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <mass value="0.0"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_wheel_1">
+  <inertial>
+    <origin xyz="8.515106086542934e-05 -0.011236845820937563 -2.921264244393207e-09" rpy="0 0 0"/>
+    <mass value="4.562945367616403"/>
+    <inertia ixx="0.005417" iyy="0.008942" izz="0.005411" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.263 0.202 -0.06325" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.263 0.202 -0.06325" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_wheel_1">
+  <inertial>
+    <origin xyz="-8.514512834917332e-05 0.011236848648709163 -1.4502343770317339e-11" rpy="0 0 0"/>
+    <mass value="4.562946828500049"/>
+    <inertia ixx="0.005417" iyy="0.008942" izz="0.005411" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.263 -0.202 -0.06325" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.263 -0.202 -0.06325" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="caster_bracket_1">
+  <inertial>
+    <origin xyz="0.0073610851956930345 0.0002052736008712615 -0.021781253388284537" rpy="0 0 0"/>
+    <mass value="0.12735587728863604"/>
+    <inertia ixx="5.4e-05" iyy="5.5e-05" izz="5.2e-05" ixy="-0.0" iyz="1e-06" ixz="1.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.226 -0.0 -0.066" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/caster_bracket_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.226 -0.0 -0.066" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/caster_bracket_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+
+
+
+</link>
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="0.0015022556532795807 -1.5060477519928323e-05 0.003359747891825471" rpy="0 0 0"/>
+    <mass value="0.10856817293338261"/>
+    <inertia ixx="2.6e-05" iyy="2.7e-05" izz="4.9e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.24 0.0 -0.18" rpy="0 0 0"/>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.24 0.0 -0.18" rpy="0 0 0"/>
+  </collision>
+</link>
+
+
+
+
+<link name="caster_wheel_1">
+  <inertial>
+    <origin xyz="-3.3250866893208553e-07 -0.015250461878444036 1.349614864309956e-15" rpy="0 0 0"/>
+    <mass value="0.37770800332081617"/>
+    <inertia ixx="7.9e-05" iyy="0.000119" izz="7.9e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.249 -0.01525 -0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/caster_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.249 -0.01525 -0.02" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/caster_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_ultrasonic_1">
+  <inertial>
+    <origin xyz="-0.001999150988762799 0.003483321407706491 -4.231091683404298e-07" rpy="0 0 0"/>
+    <mass value="0.1288434130307615"/>
+    <inertia ixx="3.2e-05" iyy="3.9e-05" izz="1.6e-05" ixy="-6e-06" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.28618 0.226802 -0.066172" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/right_ultrasonic_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.28618 0.226802 -0.066172" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/right_ultrasonic_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_centre_ultrasonic_1">
+  <inertial>
+    <origin xyz="-0.004016278520850236 9.980050960783915e-06 -0.013116831602356813" rpy="0 0 0"/>
+    <mass value="0.12884308613461035"/>
+    <inertia ixx="4.3e-05" iyy="2.9e-05" izz="1.6e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.323 0.079 -0.079172" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/right_centre_ultrasonic_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.323 0.079 -0.079172" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/right_centre_ultrasonic_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_centre_ultrasonic_1">
+  <inertial>
+    <origin xyz="-0.004016278520850236 9.980050960825548e-06 -0.013116831602356771" rpy="0 0 0"/>
+    <mass value="0.12884308613461032"/>
+    <inertia ixx="4.3e-05" iyy="2.9e-05" izz="1.6e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.323 -0.079 -0.079172" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/left_centre_ultrasonic_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.323 -0.079 -0.079172" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/left_centre_ultrasonic_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_ultrasonic_1">
+  <inertial>
+    <origin xyz="-0.00201644346192581 -0.0034733355588692783 -4.271252248277957e-07" rpy="0 0 0"/>
+    <mass value="0.12884306736623757"/>
+    <inertia ixx="3.2e-05" iyy="3.9e-05" izz="1.6e-05" ixy="6e-06" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.28618 -0.226802 -0.066172" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/left_ultrasonic_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.28618 -0.226802 -0.066172" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/left_ultrasonic_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="line_follow_sensor_1">
+  <inertial>
+    <origin xyz="0.02481580797009083 8.094959058542158e-06 0.0003998632436392896" rpy="0 0 0"/>
+    <mass value="0.011670600236381234"/>
+    <inertia ixx="1.7e-05" iyy="2e-06" izz="1.9e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.05765 -0.0 -0.037" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/line_follow_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.05765 -0.0 -0.037" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/line_follow_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="top_plate_1">
+  <inertial>
+    <origin xyz="0.2896082214096793 0.17699486296565511 0.000668127959161019" rpy="0 0 0"/>
+    <mass value="7.7056267523234485"/>
+    <inertia ixx="0.183149" iyy="0.210131" izz="0.389817" ixy="-0.0" iyz="0.0" ixz="-0.001027"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.284452 0.177 -0.133891" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/top_plate_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.284452 0.177 -0.133891" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find cepheus_description)/meshes/top_plate_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="right_wheel_joint" type="continuous">
+  <origin xyz="-0.263 -0.202 0.06325" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="left_wheel_joint" type="continuous">
+  <origin xyz="-0.263 0.202 0.06325" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="caster_bracket_joint" type="continuous">
+  <origin xyz="0.226 0.0 0.066" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="caster_bracket_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="caster_wheel_joint" type="continuous">
+  <origin xyz="0.023 0.01525 -0.046" rpy="0 0 0"/>
+  <parent link="caster_bracket_1"/>
+  <child link="caster_wheel_1"/>
+  <axis xyz="-7e-06 -1.0 -0.0"/>
+</joint>
+<joint name="lidar_joint" type="fixed">
+  <origin xyz="0.24 0.0 0.18" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+<joint name="right_ultranosic_joint" type="fixed">
+  <origin xyz="0.28618 -0.226802 0.066172" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_ultrasonic_1"/>
+</joint>
+
+<joint name="right_centre_ultranosic_joint" type="fixed">
+  <origin xyz="0.323 -0.079 0.079172" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_centre_ultrasonic_1"/>
+</joint>
+
+<joint name="left_centre_ultranosic_joint" type="fixed">
+  <origin xyz="0.323 0.079 0.079172" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_centre_ultrasonic_1"/>
+</joint>
+
+<joint name="left_ultranosic_joint" type="fixed">
+  <origin xyz="0.28618 0.226802 0.066172" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_ultrasonic_1"/>
+</joint>
+
+<joint name="line_follow_joint" type="fixed">
+  <origin xyz="-0.05765 0.0 0.037" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="line_follow_sensor_1"/>
+</joint>
+
+<joint name="top_plate_joint" type="fixed">
+  <origin xyz="-0.284452 -0.177 0.133891" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="top_plate_1"/>
+</joint>
+
+</robot>
