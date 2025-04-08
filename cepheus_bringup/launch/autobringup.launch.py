@@ -28,7 +28,7 @@ def generate_launch_description():
     
     map_file=LaunchConfiguration('map')
     map_directory = os.path.join(get_package_share_directory(
-            'cepheus_navigation'), 'maps','test2.yaml')
+            'cepheus_navigation'), 'maps','room2.yaml')
     use_sim_time=LaunchConfiguration('use_sim_time')
     exploration=LaunchConfiguration('exploration')   
     
@@ -123,10 +123,10 @@ def generate_launch_description():
         
         # microros_node,
         rviz_node,
-        # state_publisher_launch_cmd,
+        state_publisher_launch_cmd,
         robot_state_publisher_node,
         joint_state_publisher_node,
-        # ydlidar_launch_cmd,
+        ydlidar_launch_cmd,
         gazebo_launch_cmd,
         navigation_launch_cmd, 
         cartographer_launch_cmd

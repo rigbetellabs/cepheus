@@ -10,11 +10,11 @@ from launch.conditions import IfCondition
 def generate_launch_description():
   prefix_address = get_package_share_directory('cepheus_slam') 
   config_directory = os.path.join(prefix_address, 'config')
-  carto_config_basename = 'lidar.lua'
+  slam_config = 'lidar.lua'
   res = LaunchConfiguration('resolution', default='0.05')
   publish_period = LaunchConfiguration('publish_period_sec', default='1.0')
   use_sim_time=LaunchConfiguration('use_sim_time')
-  exploration=LaunchConfiguration('exploration')  
+  exploration=LaunchConfiguration('exploration')  # slam in exploration MODE
 
 
   return LaunchDescription([
@@ -43,18 +43,35 @@ def generate_launch_description():
       description='path to the .lua files'
     ),
     DeclareLaunchArgument(
-      'carto_config_basename',
-      default_value=carto_config_basename,
+      'slam_configuration_basename',
+      default_value=slam_config,
       description='name of .lua file to be used'
     ),
-
+    DeclareLaunchArgument(
+      'localization_configuration_basename',
+      default_value=slam_config,
+      description='name of .lua file to be used'
+    ),
     Node(
       package='cartographer_ros',
+      condition= IfCondition(exploration),
       executable='cartographer_node',
       name='as21_cartographer_node',
       arguments=[
         '-configuration_directory', config_directory,
-        '-configuration_basename', carto_config_basename
+        '-configuration_basename', slam_config
+      ],
+      parameters= [{'use_sim_time':use_sim_time}],
+      output='screen'
+    ),
+    Node(
+      package='cartographer_ros',
+      condition=IfCondition(PythonExpression(['not ', exploration])),
+      executable='cartographer_node',
+      name='as21_cartographer_node',
+      arguments=[
+        '-configuration_directory', config_directory,
+        '-configuration_basename', slam_config
       ],
       parameters= [{'use_sim_time':use_sim_time}],
       output='screen'
