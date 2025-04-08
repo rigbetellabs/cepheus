@@ -22,6 +22,8 @@ def generate_launch_description():
   
     lifecycle_nodes = ['map_server', 
                        'amcl'
+
+                       
                        ]
     # start_costmap_filter_info_server_cmd = launch_ros.actions.Node(
     #     package='nav2_map_server',
