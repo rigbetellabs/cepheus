@@ -8,7 +8,7 @@ from launch_ros.actions import Node
 from launch.conditions import IfCondition
 
 def generate_launch_description():
-  prefix_address = get_package_share_directory('tortoisebotpro_max_slam') 
+  prefix_address = get_package_share_directory('cepheus_slam') 
   config_directory = os.path.join(prefix_address, 'config')
   carto_config_basename = 'lidar.lua'
   res = LaunchConfiguration('resolution', default='0.05')
